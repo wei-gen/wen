@@ -2,6 +2,7 @@ package com.example.wenmanager.service;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.RandomUtil;
+import com.example.wenmanager.util.FileUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,14 +28,15 @@ public class FileService {
     }
 
     public String uploadImage(MultipartFile file){
-        String fileName = RandomUtil.randomString(10);
+
+        String fileName = RandomUtil.randomString(15) + FileUtils.getFileSuffix(file.getOriginalFilename());
         // 获取当前日期
         LocalDate currentDate = LocalDate.now();
         String fileParentDirName = currentDate.format(formatter);
         String parentDirPath = IMAGE_FILE_PARENT_DIR + File.separator + fileParentDirName;
         if(!FileUtil.exist(parentDirPath)){
             //创建目录
-            FileUtil.touch(parentDirPath);
+            FileUtil.mkdir(parentDirPath);
         }
         try {
             file.transferTo(new File(parentDirPath + File.separator + fileName));

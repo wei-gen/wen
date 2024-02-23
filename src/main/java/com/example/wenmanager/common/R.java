@@ -16,11 +16,11 @@ public class R {
         r.message = rEnum.getMessage();
         return r;
     }
-    public static R SUCCESS(Object Data){
+    public static R SUCCESS(Object data){
         R r = new R();
         r.code = REnum.SUCCESS.getCode();
         r.message = REnum.SUCCESS.getMessage();
-        r.data = r.data;
+        r.data = data;
         return r;
     }
 

@@ -15,6 +15,7 @@ public class JWTUtils {
                 put("id", user.getId());
                 put("vxName", user.getVxName());
                 put("avater", user.getAvatar());
+                put("expire_time", System.currentTimeMillis() + 1000 * 60 * 60 * 24 * 15);
             }
         };
 
