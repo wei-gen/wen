@@ -11,3 +11,7 @@ spring:
     username: root
     password: root
 
+wechat:
+  config:
+    AppID: wx648f49cf6b99e4b7
+    AppSecret: ef864d3236b1a5c399999007b2b3ec28
