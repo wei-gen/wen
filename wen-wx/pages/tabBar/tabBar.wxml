@@ -1,0 +1,8 @@
+<view class="custom-tab-bar">
+  <block wx:for="{{ tabBarList }}" wx:key="pagePath">
+    <view class="tab-item" data-index="{{index}}" bindtap="switchTab">
+      <image class="tab-icon" src="{{ item.iconPath }}"></image>
+      <text class="tab-text">{{ item.text }}</text>
+    </view>
+  </block>
+</view>

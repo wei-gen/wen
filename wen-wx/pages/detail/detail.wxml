@@ -1,0 +1,17 @@
+<view class="chat-container">
+  <scroll-view scroll-y="true" class="message-list" scroll-into-view="{{toView}}" scroll-with-animation>
+    <block wx:for="{{messages}}" wx:key="index">
+      <view class="message-item {{item.type}}">
+        <image class="avatar" src="{{item.avatar}}" />
+        <view class="message-content">
+          <text>{{item.content}}</text>
+          <text class="time">{{item.time}}</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="input-box">
+    <input class="input" placeholder="请输入消息" value="{{inputValue}}" bindinput="inputTyping" />
+    <button class="send-btn" bindtap="sendMessage">发送</button>
+  </view>
+</view>

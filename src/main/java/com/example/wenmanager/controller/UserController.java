@@ -33,7 +33,7 @@ public class UserController {
 
     @PostMapping("/wechat_login")
     public R weChatLogin(@RequestBody User user){
-        return this.userService.wxLogin(user.getOpenId());
+        return this.userService.wxLogin(user);
     }
 
 }

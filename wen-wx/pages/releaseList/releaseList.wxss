@@ -1,0 +1,26 @@
+.release-list-dialog {
+  position: fixed; /* 固定定位，相对于视窗 */
+  top: 0; /* 距离视窗顶部距离为0 */
+  left: 0; /* 距离视窗左侧距离为0 */
+  width: 100%; /* 宽度占满整个视窗 */
+  height: 100%; /* 高度占满整个视窗 */
+  background-color: rgba(255, 255, 255, 1); /* 半透明黑色背景 */
+  display: flex; /* 使用 Flex 布局 */
+  justify-content: center; /* 在水平方向居中 */
+}
+
+.hide-button{
+  width: 20%;
+}
+
+.camera-dialog{
+  position: fixed; /* 固定定位，相对于视窗 */
+  top: 0; /* 距离视窗顶部距离为0 */
+  left: 0; /* 距离视窗左侧距离为0 */
+  width: 100%; /* 宽度占满整个视窗 */
+  height: 100%; /* 高度占满整个视窗 */
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+  display: flex; /* 使用 Flex 布局 */
+  justify-content: center; /* 在水平方向居中 */
+  align-items: center;
+}

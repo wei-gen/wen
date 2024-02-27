@@ -1,0 +1,33 @@
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view>
+    <button bindtap="showDialog">点击发布</button>
+  </view>
+  <!-- 发布列表 -->
+  <view></view>
+  <!-- 弹窗 -->
+  <view class="release-list-dialog" wx:if="{{showDialog}}" style="z-index: 888;">
+    <view style="display: flex; justify-content: center;flex-direction: column;">
+      <!-- 预览 -->
+      <image wx:if="{{!hasChooseImage}}" mode="widthFix" src="{{imageUrl}}" style="width: 50%;margin: 0 auto 0 auto;" bindtap="chooseImage"></image>
+      <image wx:else="{{hasChooseImage}}" mode="widthFix" src="{{src}}" style="width: 50%;margin: 0 auto 0 auto;"></image>
+      <!-- 多行文本 -->
+      <view style=" width: 100%;margin-bottom: 60rpx;">
+        <view style="  font-size: 28rpx;color: #999999;margin-bottom: 10rpx;padding-left: 30rpx;padding-right: 30rpx;">描述</view>
+        <view class="textarea-wrp" style="padding: 0 25rpx;background-color: #fff;">
+          <textarea auto-focus="true" style="height: 5em;background-color: rgba(139, 139, 139, 0.5);" />
+        </view>
+      </view>
+      <button bindtap="uploadData" class="hide-button">确认</button>
+    </view>
+  </view>
+  <!-- 摄像机弹窗 -->
+  <!-- <view class="camera-dialog" wx:if="{{showCameraDialog}}" style="z-index: 999;">
+
+    <view style="width: 100%; height: 100%;">
+      <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 100%;"></camera>
+    </view>
+    <view style="position: fixed;top: 90%;" bindtap="takePhoto">
+      点击照相
+    </view>
+  </view> -->
+</scroll-view>

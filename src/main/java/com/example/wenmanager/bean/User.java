@@ -12,8 +12,8 @@ public class User {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
     private String openId;
-    private String vxName;
-    private String avatar;
+    private String nickName;
+    private String avatarUrl;
     @TableField(value = "is_delete", fill = FieldFill.INSERT)
     private Integer isDelete;
     @TableField(value = "update_time", fill = FieldFill.UPDATE)

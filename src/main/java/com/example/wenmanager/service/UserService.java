@@ -15,15 +15,17 @@ public class UserService extends ServiceImpl<UserMapper, User> {
 
     /**
      * 微信登陆
-     * @param openId
+     * @param user
      * @return
      */
-    public R wxLogin(String openId){
-        User user = this.getOne(
-                Wrappers.<User>lambdaQuery().eq(User::getOpenId,openId)
+    public R wxLogin(User user){
+        User selectUser = this.getOne(
+                Wrappers.<User>lambdaQuery().eq(User::getOpenId,user.getOpenId())
         );
-        if (user == null){
-            throw new WeChatLoginException();
+        if (selectUser == null){
+            //新用户
+            selectUser = user;
+            this.save(selectUser);
         }
         return R.SUCCESS(JWTUtils.createToken(user));
     }

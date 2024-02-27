@@ -1,0 +1,5 @@
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+      <navigator url="/pages/falls/falls">瀑布流</navigator>
+  </view>
+</scroll-view>

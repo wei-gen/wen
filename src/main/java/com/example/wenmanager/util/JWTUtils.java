@@ -13,8 +13,8 @@ public class JWTUtils {
             private static final long serialVersionUID = 1L;
             {
                 put("id", user.getId());
-                put("vxName", user.getVxName());
-                put("avater", user.getAvatar());
+                put("vxName", user.getNickName());
+                put("avater", user.getAvatarUrl());
                 put("expire_time", System.currentTimeMillis() + 1000 * 60 * 60 * 24 * 15);
             }
         };

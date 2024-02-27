@@ -1,0 +1,22 @@
+<!--pages/user/user.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="userinfo">
+    <block wx:if="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 点击授权登录 </button>
+      <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点击授权登录 </button>
+    </block>
+    <block wx:else>
+      <view>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+      <!-- 发布列表 -->
+      <view>
+        <view>
+          
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+

@@ -1,0 +1,34 @@
+<!--pages/falls/falls.wxml-->
+<view class="content">
+  <view class="content-left">
+    <block wx:for="{{list}}" wx:key="list">
+      <template is='item-data' data='{{...item}}' wx:if="{{index % 2 == 0}}"></template>
+    </block>
+  </view>
+  <view class="content-right">
+    <block wx:for="{{list}}" wx:key="list">
+      <template is='item-data' data='{{...item}}' wx:if="{{index % 2 == 1}}"></template>
+    </block>
+  </view>
+</view>
+<!--定义模板-->
+<template name='item-data'>
+  <view class="content-item">
+    <!--重点是mode为widthFix-->
+    <navigator url="/pages/detail/detail">
+      <image src="{{url}}" class="content-item-img" mode="widthFix" />
+    </navigator>
+    <view class="content-item-box">
+      <view class="content-item-title">{{title}}</view>
+      <view class="content-item-name">
+        <view class="flex-row">
+          <navigator url="/pages/detail/detail">
+            <image src="{{avatar}}" mode="aspectFill" class="content-item-avatar" />
+          </navigator>
+          <view>{{name}}</view>
+        </view>
+        <view class="content-item-heart">{{num}}</view>
+      </view>
+    </view>
+  </view>
+</template>
